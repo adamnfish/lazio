@@ -11,7 +11,7 @@ class Lambda extends LazioAPIGatewayProxy {
       request <- ZIO.access[(APIGatewayProxyRequestEvent, Context)](r => r._1)
     } yield {
       new APIGatewayProxyResponseEvent()
-        .withBody("test" ++ request.getBody)
+        .withBody("test: " ++ request.getBody)
     }
   }
 }
