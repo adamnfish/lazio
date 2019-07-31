@@ -1,0 +1,21 @@
+{
+  "name": "cdk",
+  "version": "1.0.0",
+  "description": "Lazio example infrastructure",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.2.0",
+    "@aws-cdk/aws-lambda": "^1.2.0",
+    "@aws-cdk/core": "^1.2.0",
+    "aws-cdk": "^1.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}
