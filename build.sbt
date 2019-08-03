@@ -19,7 +19,9 @@ lazy val lazioCore = (project in file("lazio-core"))
 
 lazy val example = (project in file("example"))
   .settings(
-    name := "example"
+    name := "example",
+    packageName in Universal := normalizedName.value,
+    topLevelDirectory in Universal := None
   )
   .enablePlugins(JavaAppPackaging)
   .dependsOn(lazioCore)
