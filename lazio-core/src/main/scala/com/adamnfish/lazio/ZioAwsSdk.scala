@@ -5,8 +5,8 @@ import com.amazonaws.handlers.AsyncHandler
 import zio.{IO, Promise}
 
 
-object AwsAsyncHandler {
-  def awsToZio
+object ZioAwsSdk {
+  def wrapSdk
       [R <: AmazonWebServiceRequest, T, Client]
       (client: Client)
       (sdkMethod: Client => ((R, AsyncHandler[R, T]) => java.util.concurrent.Future[T])): (R => IO[Exception, T]) = { req =>
