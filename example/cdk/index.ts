@@ -15,7 +15,7 @@ export class LazioLambda extends cdk.Stack {
       environment: {}
     });
     
-    new apigateway.LambdaRestApi(this, 'itemsApi', {
+    new apigateway.LambdaRestApi(this, 'lazio-api', {
       handler: lambdaFn,
       restApiName: 'Lazio example'
     });
@@ -24,4 +24,3 @@ export class LazioLambda extends cdk.Stack {
 
 const app = new cdk.App();
 new LazioLambda(app, 'LazioLambda');
-app.synth();
