@@ -14,7 +14,7 @@ have its execution handled for you.
 
 The ZIO wrapper requires a ZIO program with the following type:
 
-```
+```scala
 ZIO[Environment, Nothing, ApiGatewayProxyResponse]
 ```
 
