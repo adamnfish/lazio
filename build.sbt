@@ -19,9 +19,9 @@ lazy val lazioCore = (project in file("lazio-core"))
     )
   )
 
-lazy val example = (project in file("example"))
+lazy val example = (project in file("example/lambda"))
   .settings(
-    name := "example",
+    name := "lambda-example",
     packageName in Universal := normalizedName.value,
     topLevelDirectory in Universal := None,
     libraryDependencies ++= Seq(
@@ -31,5 +31,17 @@ lazy val example = (project in file("example"))
   )
   .enablePlugins(JavaAppPackaging)
   .dependsOn(lazioCore)
+
+lazy val exampleDevServer = (project in file("example/devServer"))
+  .settings(
+    name := "example-dev-server",
+    libraryDependencies ++= Seq(
+      "io.javalin" % "javalin" % "3.4.1",
+      "org.slf4j" % "slf4j-simple" % "1.7.26",
+      "dev.zio" %% "zio" % zioVersion,
+      "com.amazonaws" % "aws-lambda-java-events" % awsLambdaJavaEventsVersion
+    )
+  )
+  .dependsOn(example)
 
 // See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
