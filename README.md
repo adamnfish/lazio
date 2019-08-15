@@ -52,10 +52,11 @@ The example also contains a CDK program that can be used to create the
 Lambda function in an AWS account, behind API Gateway. The API Gateway
 integration puts the Lambda function behind a public URL.
 
+* [Example ZIO Lambda program](example/lambda/src/main/scala/com/adamnfish/lazio/Lambda.scala)
+* [CDK program for creating the example in AWS](example/lambda/cdk/index.ts)
+
 **Important note:** using the provided CDK program to create the
 Lambda function in an AWS account will incur costs!
-
-* [Example ZIO Lambda program](example/lambda/src/main/scala/com/adamnfish/lazio/Lambda.scala)
 
 ## Example Dev Server
 
